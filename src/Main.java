@@ -1,22 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        // 1. Criamos o objeto do Herói (O DNA)
+        // --- CRIAÇÃO DO HERÓI ---
         Heroi h1 = new Heroi();
-        h1.nome = "Arqueiro Verde";
-        h1.superPoder = "Pontaria";
-        h1.nivelForca = 50;
-
-        // 2. Criamos o Gerenciador (A Máquina)
         GerenciadorHeroi gerenciador = new GerenciadorHeroi();
+        MissaoHeroi sistemaDeMissoes = new MissaoHeroi();
 
-        // Passamos o objeto 'h1' para dentro do metodo gerenciador
-        // É aqui que o 'this.heroiAtivo = heroiRecebido' acontece!
-        gerenciador.adicionarHeroi(h1);
-
-        // O gerenciador agora consegue treinar o h1 porque ele o "conhece"
+        //  Criando e Treinando o Herói
+        gerenciador.criarPersonagem();
         gerenciador.treinar();
 
-        // Se pedirmos para o herói se exibir, veremos que a força subiu
-        h1.exibirFicha();
+        //  Tentando treinar o Vilão
+        gerenciador.criarPersonagem();
+        gerenciador.treinar();
     }
 }
